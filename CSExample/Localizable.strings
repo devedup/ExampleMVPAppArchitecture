@@ -1,0 +1,26 @@
+/* 
+  Localized.strings
+  CSExample
+
+  Created by David Casserly on 27/02/2018.
+  Copyright © 2018 DevedUp. All rights reserved.
+*/
+
+/**
+ Errors
+ */
+
+"error.general.title" = "Error";
+"error.general.description" = "Sorry, an unexpected error occured.";
+"error.network" = "Network error";
+"error.network.data" = "Data from network error";
+"ok" = "OK";
+
+/**
+ Score View
+ */
+
+"scoreview.title" = "Dashboard";
+"scoreview.loading" = "Loading your score";
+"scoreview.score.intro" = "Your credit score is";
+"scoreview.score.outtro" = "out of %@";
