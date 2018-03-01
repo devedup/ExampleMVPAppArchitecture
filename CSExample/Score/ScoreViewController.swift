@@ -8,13 +8,12 @@
 
 import UIKit
 
-final class ScoreViewController: UIViewController {
+final class ScoreViewController: UIViewController  {
 
     @IBOutlet var numericScoreLabel: UILabel!
     @IBOutlet var donutView: DonutView!
     @IBOutlet var introLabel: UILabel!
     @IBOutlet var outtroLabel: UILabel!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     // Fine to use Implicity unwrapped optional here, as it's loaded in lifecycle of VC
     private var presenter: ScorePresenter!
@@ -28,6 +27,9 @@ final class ScoreViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         introLabel.text = "scoreview.loading".localized
+        
+        
+        // Loads the score data on view load. There are various other scenarios you might want to cover, such as pull to refresh, reloading automatically after network reachability changes, manual retries after errors via the UIAlertController. 
         presenter.loadScoreData()
     }
 
@@ -44,21 +46,4 @@ extension ScoreViewController: ScorePresenterView {
         donutView.percent = scoreData.scorePercent
     }
     
-    func present(error: ClearScoreError) {
-        let title = "error.general.title".localized
-        let message = error.description
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "ok".localized , style: .default, handler: nil)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func presentLoading() {
-        activityIndicator.startAnimating()
-    }
-    
-    func dismissLoading() {
-        activityIndicator.stopAnimating()
-    }
 }

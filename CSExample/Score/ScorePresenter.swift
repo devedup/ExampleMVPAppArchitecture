@@ -10,12 +10,11 @@ import Foundation
 
 
 /// To decouple the VC from the Presenter
-protocol ScorePresenterView: class {
+/// We declare we're conforming to ActivityIndicatorPresentable and ErrorPresentable so that out presenter can use activity indicators and display errors on this VC
+protocol ScorePresenterView: class, ActivityIndicatorPresentable, ErrorPresentable {
     
     func present(scoreData: ScoreViewModel)
-    func present(error: ClearScoreError)
-    func presentLoading()
-    func dismissLoading()
+    
 }
 
 final class ScorePresenter {
@@ -36,7 +35,7 @@ final class ScorePresenter {
     
     /// Trigger the loading of the score data, which will return asynchronously and call presentScoreData when it is complete, or it may present an error
     func loadScoreData() {
-        view?.presentLoading()
+        view?.presentActivityIndicator()
         service.loadScoreData { [weak self] (scoreServiceResult) in
             switch scoreServiceResult {
             case .success(let scoreModel):
@@ -45,9 +44,9 @@ final class ScorePresenter {
                 self?.view?.present(scoreData: viewModel)
             case .failure(let error):
                 // The error could be transformed into something more displayable
-                self?.view?.present(error: error)
+                self?.view?.present(error)
             }
-            self?.view?.dismissLoading()
+            self?.view?.dismissActivityIndicator()
         }
     }
     

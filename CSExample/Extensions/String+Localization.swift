@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Allows you to be more succinct with your string localizations, improved readability
 extension String {
     
     var localized: String {

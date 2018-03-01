@@ -9,7 +9,7 @@
 import XCTest
 @testable import CSExample
 
-class CSExampleTests: XCTestCase {
+class ScoreViewTests: XCTestCase {
     
     // MARK: Model Tests
 
@@ -48,9 +48,9 @@ class CSExampleTests: XCTestCase {
     
     // MARK: Presenter Tests
     
-    func testPresenterError() {
+    func testServiceFailure_expectDidPresentError() {
         // Create presenter
-        let mockView = MockView()
+        let mockView = MockScorePresenterView()
         let networkExpectation = expectation(description: "Waiting for callback")
         let errorScoreService = DummyErrorService()
         errorScoreService.expectation = networkExpectation
@@ -64,33 +64,29 @@ class CSExampleTests: XCTestCase {
         XCTAssertTrue(mockView.didPresentError)
     }
     
-    
 }
 
-class MockView: ScorePresenterView {
+/// This mock can be used to determine which methods were called on the Presenter, it can be expanded to cover the other methods when the tests are filled out
+private class MockScorePresenterView: ScorePresenterView {
     
     var didPresentError: Bool = false
     
-    func present(scoreData: ScoreViewModel) {
-        
-    }
+    func present(scoreData: ScoreViewModel) {}
     
-    func present(error: ClearScoreError) {
+    func present(_ error: ClearScoreError) {
         didPresentError = true
     }
     
-    func presentLoading() {
-        
-    }
-    
-    func dismissLoading() {
-        
-    }
+    func presentActivityIndicator() {}
+
+    func dismissActivityIndicator() {}
     
 }
 
-class DummyErrorService: ScoreService {
+/// This implementation of ScoreService will always return an error
+private class DummyErrorService: ScoreService {
     
+    /// It's a unit test dummy, so the implicit unwrapping is fine here
     var expectation: XCTestExpectation!
     
     func loadScoreData(completion: @escaping AsyncResultCompletion<ScoreModel>) {
@@ -98,6 +94,7 @@ class DummyErrorService: ScoreService {
         expectation.fulfill()
         completion(AsyncResult.failure(ClearScoreError.generalNetworkError(nil)))
     }
+    
 }
 
 

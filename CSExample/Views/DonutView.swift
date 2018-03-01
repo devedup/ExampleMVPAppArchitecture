@@ -9,20 +9,29 @@
 import Foundation
 import UIKit
 
+/// A custom view class to display a circule ring percentage. Setting the percent on an instance of this will cause the view to redraw.
 final class DonutView: UIView {
 
+    /// On passing a value betwen 0 and 1, the view will redraw displaying the percent ring
     var percent: Double = 0.0 {
         didSet {
+            // Will only be raised in DEBUG
+            assert(percent >= 0.0 && percent <= 1.0, "Percent must be between 0 and 1")
             setNeedsDisplay()
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        sharedInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        sharedInit()
+    }
+    
+    private func sharedInit() {
         self.backgroundColor = UIColor.clear
     }
     
@@ -66,7 +75,3 @@ final class DonutView: UIView {
     
 }
 
-
- 
- 
- 

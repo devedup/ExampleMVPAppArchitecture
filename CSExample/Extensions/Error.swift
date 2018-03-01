@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// App specific errors, with optional associated Error objects with more detail
+///
+/// You would fill this out with lots more app specific errors
+///
+/// - generalNetworkError: when the network fails
+/// - dataError: when the data from the network has unexpected erorrs
 enum ClearScoreError: Error, CustomStringConvertible {
     
     case generalNetworkError (Error?)

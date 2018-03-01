@@ -20,25 +20,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giK-rf-YzR" userLabel="ScoreViewContainer">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dG-2U-ki0" customClass="DonutView" customModule="CSExample" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPt-dZ-5g9">
-                                                <rect key="frame" x="187.5" y="188" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="150" y="150" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="68"/>
                                                 <color key="textColor" red="0.94117647058823528" green="0.75686274509803919" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZx-42-hqx">
-                                                <rect key="frame" x="187" y="180" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="149.5" y="142" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftM-Rl-Byj">
-                                                <rect key="frame" x="188" y="195.5" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="150.5" y="157.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -58,28 +58,22 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4dG-2U-ki0" firstAttribute="top" secondItem="giK-rf-YzR" secondAttribute="top" id="42m-ic-YAq"/>
+                                    <constraint firstAttribute="width" constant="300" id="4v7-TU-N3o"/>
                                     <constraint firstItem="4dG-2U-ki0" firstAttribute="leading" secondItem="giK-rf-YzR" secondAttribute="leading" id="OAY-UG-ydS"/>
                                     <constraint firstAttribute="trailing" secondItem="4dG-2U-ki0" secondAttribute="trailing" id="OK1-3P-ffn"/>
                                     <constraint firstAttribute="width" secondItem="giK-rf-YzR" secondAttribute="height" multiplier="1:1" id="Os2-C9-4mR"/>
                                     <constraint firstAttribute="bottom" secondItem="4dG-2U-ki0" secondAttribute="bottom" id="niy-We-T31"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sie-ao-rGz">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sie-ao-rGz" firstAttribute="centerX" secondItem="giK-rf-YzR" secondAttribute="centerX" id="175-eo-H5A"/>
-                            <constraint firstItem="sie-ao-rGz" firstAttribute="centerY" secondItem="giK-rf-YzR" secondAttribute="centerY" id="6Y0-Ro-8m4"/>
                             <constraint firstItem="giK-rf-YzR" firstAttribute="centerX" secondItem="HVZ-5g-cnd" secondAttribute="centerX" id="VfN-dL-uZo"/>
-                            <constraint firstItem="giK-rf-YzR" firstAttribute="width" secondItem="HVZ-5g-cnd" secondAttribute="width" id="Xfn-Ed-2nS"/>
                             <constraint firstItem="giK-rf-YzR" firstAttribute="centerY" secondItem="HVZ-5g-cnd" secondAttribute="centerY" id="nHQ-S0-xG1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nq3-W1-jh4"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="sie-ao-rGz" id="WCz-yc-LQ7"/>
                         <outlet property="donutView" destination="4dG-2U-ki0" id="sTa-Nt-vh6"/>
                         <outlet property="introLabel" destination="vZx-42-hqx" id="wun-gh-zUL"/>
                         <outlet property="numericScoreLabel" destination="wPt-dZ-5g9" id="YLC-T2-dbS"/>

@@ -24,6 +24,9 @@
 		550D6FE820456CE4006DF0D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550D6FE720456CE4006DF0D6 /* Localizable.strings */; };
 		550D6FEA20456D8B006DF0D6 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6FE920456D8B006DF0D6 /* String+Localization.swift */; };
 		550D6FED20457020006DF0D6 /* DonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6FEC20457020006DF0D6 /* DonutView.swift */; };
+		550D6FF2204808CE006DF0D6 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6FF0204808CD006DF0D6 /* UIViewController+ActivityIndicator.swift */; };
+		550D6FF3204808CE006DF0D6 /* UIViewController+ErrorAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6FF1204808CE006DF0D6 /* UIViewController+ErrorAlerts.swift */; };
+		550D6FF520480A6D006DF0D6 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6FF420480A6D006DF0D6 /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		550D6FE720456CE4006DF0D6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		550D6FE920456D8B006DF0D6 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		550D6FEC20457020006DF0D6 /* DonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutView.swift; sourceTree = "<group>"; };
+		550D6FF0204808CD006DF0D6 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		550D6FF1204808CE006DF0D6 /* UIViewController+ErrorAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlerts.swift"; sourceTree = "<group>"; };
+		550D6FF420480A6D006DF0D6 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,9 @@
 				550D6FDD20455858006DF0D6 /* AsyncResult.swift */,
 				550D6FE320455E30006DF0D6 /* Error.swift */,
 				550D6FE920456D8B006DF0D6 /* String+Localization.swift */,
+				550D6FF0204808CD006DF0D6 /* UIViewController+ActivityIndicator.swift */,
+				550D6FF1204808CE006DF0D6 /* UIViewController+ErrorAlerts.swift */,
+				550D6FF420480A6D006DF0D6 /* UIView+Layout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,14 +286,17 @@
 				550D6FEA20456D8B006DF0D6 /* String+Localization.swift in Sources */,
 				550D6FDB2044689C006DF0D6 /* ScoreService.swift in Sources */,
 				550D6FE220455C60006DF0D6 /* Network.swift in Sources */,
+				550D6FF3204808CE006DF0D6 /* UIViewController+ErrorAlerts.swift in Sources */,
 				550D6FD52044687F006DF0D6 /* ScoreModel.swift in Sources */,
 				550D6FB620445BAD006DF0D6 /* ScoreViewController.swift in Sources */,
 				550D6FD920446892006DF0D6 /* ScorePresenter.swift in Sources */,
 				550D6FB420445BAD006DF0D6 /* AppDelegate.swift in Sources */,
 				550D6FE420455E30006DF0D6 /* Error.swift in Sources */,
+				550D6FF2204808CE006DF0D6 /* UIViewController+ActivityIndicator.swift in Sources */,
 				550D6FE620455FA7006DF0D6 /* ScoreServiceNetworkResponse.swift in Sources */,
 				550D6FD720446889006DF0D6 /* ScoreViewModel.swift in Sources */,
 				550D6FED20457020006DF0D6 /* DonutView.swift in Sources */,
+				550D6FF520480A6D006DF0D6 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
